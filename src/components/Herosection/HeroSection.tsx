@@ -8,8 +8,7 @@ import { useState } from 'react'
 import DetailsSector from './Detailssection'
 import SectionPage from './Section'
 import FAQ from './FAQ'
-
-
+import FooterSection from './Footer'
 
 const menuItems = [
     { name: 'Home', to: '/' },
@@ -165,6 +164,7 @@ export default function HeroSection() {
             <DetailsSector />
             <SectionPage />
             <FAQ />
+            <FooterSection />
         </>
     )
 }
