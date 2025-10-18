@@ -9,6 +9,7 @@ import DetailsSector from './Detailssection'
 import SectionPage from './Section'
 import FAQ from './FAQ'
 import FooterSection from './Footer'
+import { ModeToggle } from '../mode-toggle'
 
 const menuItems = [
     { name: 'Home', to: '/' },
@@ -60,6 +61,7 @@ export default function HeroSection() {
                                     </ul>
                                 </div>
                              
+                                <ModeToggle />
 
                                 <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit lg:border-l lg:pl-6">
                                     <Button

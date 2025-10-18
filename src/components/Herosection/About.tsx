@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
 import About from "../../assets/5.png"
-
+import { ModeToggle } from '../mode-toggle'
 
 import { Link } from 'react-router-dom'
 
@@ -63,7 +63,7 @@ export default function ContentSection() {
                                     </ul>
                                 </div>
 
-                                
+                                <ModeToggle />
 
                                 <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit lg:border-l lg:pl-6">
                                     <Button
