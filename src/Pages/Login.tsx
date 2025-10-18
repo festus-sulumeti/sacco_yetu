@@ -1,23 +1,22 @@
 
 
-import { SignupForm } from "@/components/signup-form"
-import image from "../assets/3.png"
+import { LoginForm } from "@/components/login-form"
+import image from "../assets/4.png"
 
-export default function SignupPage() {
+export default function LoginPage() {
   return (
     <div className="grid min-h-svh lg:grid-cols-2">
       <div className="flex flex-col gap-4 p-6 md:p-10">
         <div className="flex justify-center gap-2 md:justify-start">
           
             <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
-              
+             
             </div>
-            Niokolee
-          
+           Niokolee
         </div>
         <div className="flex flex-1 items-center justify-center">
           <div className="w-full max-w-xs">
-            <SignupForm />
+            <LoginForm />
           </div>
         </div>
       </div>
