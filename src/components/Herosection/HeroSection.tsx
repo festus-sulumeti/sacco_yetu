@@ -6,6 +6,7 @@ import Image from '../../assets/1.png'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import DetailsSector from './Detailssection'
+import SectionPage from './Section'
 
 
 
@@ -161,6 +162,7 @@ export default function HeroSection() {
             </main>
 
             <DetailsSector />
+            <SectionPage />
         </>
     )
 }
