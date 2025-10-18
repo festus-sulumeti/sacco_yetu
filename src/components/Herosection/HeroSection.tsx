@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import DetailsSector from './Detailssection'
 import SectionPage from './Section'
+import FAQ from './FAQ'
 
 
 
@@ -163,6 +164,7 @@ export default function HeroSection() {
 
             <DetailsSector />
             <SectionPage />
+            <FAQ />
         </>
     )
 }
