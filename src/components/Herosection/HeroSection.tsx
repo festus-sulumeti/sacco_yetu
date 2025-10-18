@@ -5,6 +5,7 @@ import { ArrowRight, Mail, Menu, SendHorizonal, X } from 'lucide-react'
 import Image from '../../assets/1.png'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import DetailsSector from './Detailssection'
 
 
 
@@ -159,7 +160,7 @@ export default function HeroSection() {
                 </section>
             </main>
 
-            
+            <DetailsSector />
         </>
     )
 }
