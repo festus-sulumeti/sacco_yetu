@@ -9,7 +9,7 @@ import About from "../../assets/5.png"
 import { Link } from 'react-router-dom'
 
 import Footer from './Footer'
-import { ModeToggle } from '../mode-toggle'
+
 
 const menuItems = [
     { name: 'Home', to: '/' },
@@ -63,7 +63,7 @@ export default function ContentSection() {
                                     </ul>
                                 </div>
 
-                                <ModeToggle />
+                                
 
                                 <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit lg:border-l lg:pl-6">
                                     <Button
