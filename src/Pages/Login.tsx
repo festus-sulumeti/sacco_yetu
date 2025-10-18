@@ -12,7 +12,7 @@ export default function LoginPage() {
             <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
              
             </div>
-           Niokolee
+           Sacco Yetu
         </div>
         <div className="flex flex-1 items-center justify-center">
           <div className="w-full max-w-xs">

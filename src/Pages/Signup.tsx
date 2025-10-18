@@ -12,7 +12,7 @@ export default function SignupPage() {
             <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
               
             </div>
-            Niokolee
+            Sacco Yetu
           
         </div>
         <div className="flex flex-1 items-center justify-center">
