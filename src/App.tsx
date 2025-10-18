@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import HeroSection from './components/Herosection/HeroSection'
+import { ThemeProvider } from "@/components/theme-provider"
 
 
 function App() {
@@ -7,13 +8,13 @@ function App() {
 
   return (
     <>
-    
-    <Routes>
-        <Route path="/" element={<HeroSection />} />
-        
-      </Routes>
 
-   
+       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+          <Routes>
+            <Route path="/" element={<HeroSection />} />
+            
+          </Routes>
+      </ThemeProvider>
      
     </>
   )
