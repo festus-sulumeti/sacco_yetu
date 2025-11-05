@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import {
     BanknoteIcon,
     CalendarIcon,
@@ -40,8 +41,14 @@ import {
 } from '@/components/ui/sidebar'
 
 import ProfileDropdown from '@/components/dropdown-profile'
+import { Link } from 'react-router-dom'
 
 const ApplicationShell = () => {
+    // state to show payment panel and the URL to render
+    const [paymentUrl, setPaymentUrl] = useState<string | null>(null)
+    const openPaymentPanel = (url: string) => setPaymentUrl(url)
+    const closePaymentPanel = () => setPaymentUrl(null)
+
     return (
         <div className='flex min-h-dvh w-full'>
             <SidebarProvider>
@@ -122,10 +129,14 @@ const ApplicationShell = () => {
                                     </SidebarMenuItem>
                                     <SidebarMenuItem>
                                         <SidebarMenuButton asChild>
-                                            <a href='#'>
+                                            {/* open in-dashboard payment panel instead of navigating away */}
+                                            <button
+                                                onClick={() => openPaymentPanel('https://payments.example.com/checkout/txn_sample')}
+                                                className='flex items-center gap-2'
+                                            >
                                                 <WalletIcon />
                                                 <span>Pending Payments</span>
-                                            </a>
+                                            </button>
                                         </SidebarMenuButton>
                                         <SidebarMenuBadge className='bg-primary/10 rounded-full'>3</SidebarMenuBadge>
                                     </SidebarMenuItem>
@@ -271,6 +282,12 @@ const ApplicationShell = () => {
                                     <CardContent>
                                         <div className='text-2xl font-bold'>3</div>
                                         <p className='text-xs text-muted-foreground'>KSh 5,000 total</p>
+                                        {/* quick open button — replace URL with real payment link per item */}
+                                        <div className='mt-3'>
+                                            <Button size='sm' onClick={() => openPaymentPanel('https://payments.example.com/checkout/txn_sample')}>
+                                                Open Payment Link
+                                            </Button>
+                                        </div>
                                     </CardContent>
                                 </Card>
                             </div>
@@ -357,6 +374,27 @@ const ApplicationShell = () => {
                             </div>
                         </div>
                     </main>
+
+                    {/* In-dashboard payment slide-over / panel */}
+                    {paymentUrl && (
+                        <div className='fixed right-0 top-0 z-50 h-full w-full sm:w-1/3 bg-card shadow-lg border-l overflow-auto'>
+                            <div className='flex items-center justify-between p-4 border-b'>
+                                <h3 className='text-lg font-medium'>Pending Payment</h3>
+                                <div className='flex items-center gap-2'>
+                                    <Button variant='ghost' size='sm' onClick={closePaymentPanel}>Close</Button>
+                                </div>
+                            </div>
+                            <div className='p-4 h-[calc(100%-64px)]'>
+                                {/* iframe shows payment URL — ensure the target provider allows embedding */}
+                                <iframe
+                                    src={paymentUrl}
+                                    title='Payment'
+                                    className='w-full h-full border'
+                                />
+                            </div>
+                        </div>
+                    )}
+
                     <footer>
                         <div className='text-muted-foreground mx-auto flex size-full max-w-7xl items-center justify-between gap-3 px-4 py-3 max-sm:flex-col sm:gap-6 sm:px-6'>
                             <p className='text-sm text-balance max-sm:text-center'>

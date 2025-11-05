@@ -5,6 +5,7 @@ import LoginPage from './Pages/Login'
 import About from './components/Herosection/About'
 import Dashboard from './components/Dashboard/Dasboard'
 import { ThemeProvider } from "@/components/theme-provider"
+import Pendingpayment from './components/Dashboard/Pendingpayment'
 
 function App() {
   
@@ -18,6 +19,8 @@ function App() {
         <Route path='/login' element={<LoginPage />} /> 
         <Route path='/about' element={<About />} />
         <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/payments/pending' element={<Pendingpayment />} />
+
       </Routes>
 
     </ThemeProvider>
