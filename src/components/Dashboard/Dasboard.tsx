@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import {
     BanknoteIcon,
     CalendarIcon,
@@ -41,7 +41,7 @@ import {
 } from '@/components/ui/sidebar'
 
 import ProfileDropdown from '@/components/dropdown-profile'
-import { Link } from 'react-router-dom'
+
 
 const ApplicationShell = () => {
     // state to show payment panel and the URL to render
